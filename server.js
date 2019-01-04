@@ -7,15 +7,20 @@ app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-  // res.send("<h1>Hello Express!</h1>");
-  res.send({
-    name: "Cody",
-    likes: ["cooking", "coding", 333, "being a dad"]
+  const data = "buddy";
+
+  res.render("home.hbs", {
+    pageTitle: "Home Page",
+    someData: `Hey there ${data}!`,
+    currentYear: new Date().getFullYear()
   });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about.hbs");
+  res.render("about.hbs", {
+    pageTitle: "About Page",
+    currentYear: new Date().getFullYear()
+  });
 });
 
 app.get("/bad", (req, res) => {
