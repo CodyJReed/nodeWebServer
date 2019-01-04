@@ -6,6 +6,7 @@
   "author": "Cody Reed <cody2j2reed@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
   }
 }
