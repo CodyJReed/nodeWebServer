@@ -3,7 +3,14 @@ const hbs = require("hbs");
 
 const app = express();
 
+// Call to built-in hbs method "registerPartials()"
+// @params - STRING reference to "partials" location
+// partials = scripts && components
+hbs.registerPartials(__dirname + "/views/partials");
+// Set to view engine, this could be hbs, html, etc.
 app.set("view engine", "hbs");
+// Built-in middleware function
+// @params - root directory for serving static files
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
