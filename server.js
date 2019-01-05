@@ -1,5 +1,6 @@
 const express = require("express");
 const hbs = require("hbs");
+const fs = require("fs");
 
 const app = express();
 
@@ -14,8 +15,15 @@ app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
 
 app.use((req, res, next) => {
+  // Logger
   const now = new Date().toString();
-  console.log(`${now}: ${req.method} ${req.path}`);
+  const log = `${now}: ${req.method} ${req.path}`;
+  console.log(log);
+  fs.appendFile("server.log", log + `\n`, err => {
+    if (err) {
+      console.log("Unable to append to server.log.");
+    }
+  });
   next();
 });
 
