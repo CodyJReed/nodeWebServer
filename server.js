@@ -13,6 +13,12 @@ app.set("view engine", "hbs");
 // @params - root directory for serving static files
 app.use(express.static(__dirname + "/public"));
 
+app.use((req, res, next) => {
+  const now = new Date().toString();
+  console.log(`${now}`);
+  next();
+});
+
 // Helper function creator
 // @params - string + callback
 hbs.registerHelper("getCurrentYear", () => {
