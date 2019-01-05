@@ -13,21 +13,25 @@ app.set("view engine", "hbs");
 // @params - root directory for serving static files
 app.use(express.static(__dirname + "/public"));
 
+// Helper function creator
+// @params - string + callback
+hbs.registerHelper("getCurrentYear", () => {
+  return new Date().getFullYear();
+});
+
 // Requests...
 app.get("/", (req, res) => {
   const data = "buddy";
 
   res.render("home.hbs", {
     pageTitle: "Home Page",
-    someData: `Hey there ${data}!`,
-    currentYear: new Date().getFullYear()
+    someData: `Hey there ${data}!`
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about.hbs", {
-    pageTitle: "About Page",
-    currentYear: new Date().getFullYear()
+    pageTitle: "About Page"
   });
 });
 
