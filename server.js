@@ -27,6 +27,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.render("maintence.hbs", {
+    pageTitle: "So sorry...",
+    someData: "We're updating the site and will have it back up soon."
+  });
+});
+
 // Helper function creator
 // @params - string + callback
 hbs.registerHelper("getCurrentYear", () => {
@@ -39,11 +46,9 @@ hbs.registerHelper("screamIt", text => {
 
 // Requests...
 app.get("/", (req, res) => {
-  const data = "buddy";
-
   res.render("home.hbs", {
     pageTitle: "Home Page",
-    someData: `Hey there ${data}!`
+    someData: `Hi there! Welcome to my Website.`
   });
 });
 
