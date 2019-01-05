@@ -10,9 +10,6 @@ const app = express();
 hbs.registerPartials(__dirname + "/views/partials");
 // Set to view engine, this could be hbs, html, etc.
 app.set("view engine", "hbs");
-// Built-in middleware function
-// @params - root directory for serving static files
-app.use(express.static(__dirname + "/public"));
 
 app.use((req, res, next) => {
   // Logger
@@ -33,6 +30,10 @@ app.use((req, res, next) => {
     someData: "We're updating the site and will have it back up soon."
   });
 });
+
+// Built-in middleware function
+// @params - root directory for serving static files
+app.use(express.static(__dirname + "/public"));
 
 // Helper function creator
 // @params - string + callback
