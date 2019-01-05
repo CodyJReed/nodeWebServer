@@ -19,6 +19,10 @@ hbs.registerHelper("getCurrentYear", () => {
   return new Date().getFullYear();
 });
 
+hbs.registerHelper("screamIt", text => {
+  return text.toUpperCase();
+});
+
 // Requests...
 app.get("/", (req, res) => {
   const data = "buddy";
