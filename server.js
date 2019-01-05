@@ -15,7 +15,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use((req, res, next) => {
   const now = new Date().toString();
-  console.log(`${now}`);
+  console.log(`${now}: ${req.method} ${req.path}`);
   next();
 });
 
