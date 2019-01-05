@@ -13,6 +13,7 @@ app.set("view engine", "hbs");
 // @params - root directory for serving static files
 app.use(express.static(__dirname + "/public"));
 
+// Requests...
 app.get("/", (req, res) => {
   const data = "buddy";
 
