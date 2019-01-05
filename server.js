@@ -16,11 +16,11 @@ app.use((req, res, next) => {
   const now = new Date().toString();
   const log = `${now}: ${req.method} ${req.path}`;
   console.log(log);
-  fs.appendFile("server.log", log + `\n`, err => {
-    if (err) {
-      console.log("Unable to append to server.log.");
-    }
-  });
+  // fs.appendFile("server.log", log + `\n`, err => {
+  //   if (err) {
+  //     console.log("Unable to append to server.log.");
+  //   }
+  // });
   next();
 });
 
