@@ -2,6 +2,9 @@
   "name": "nodeWebServer",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "repository": "https://github.com/CodyJReed/nodeWebServer.git",
   "author": "Cody Reed <cody2j2reed@gmail.com>",
   "license": "MIT",
