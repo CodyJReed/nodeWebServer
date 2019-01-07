@@ -3,13 +3,15 @@
 Udemy Course "Complete Node.js Developer."
 
 <h3>Overview</h3>
-nodeWebServer is the third project completed through the Andrew Mead lead "Complete Node.js Developer Course." The application is written using vanilla JS(ES6), Node.js(v11) and the following NPM devDependencies:
+<p>nodeWebServer is the third project completed through the Andrew Mead lead "Complete Node.js Developer Course." The application is written using vanilla JS(ES6), Node.js(v11) and the following NPM devDependencies:</p>
 
-express
-hbs - handlebars
+<ul>
+  <li>express</li>
+  <li>hbs - handlebars</li>
+</ul>
 
 <h3>Features</h3>
-nodeWebServer allows the user to:
+<p>nodeWebServer allows the user to:</p>
 
 View a basic website created dynamically with the use of hbs templates and partials. Express is used to generate routing in response to User interaction. 
 
